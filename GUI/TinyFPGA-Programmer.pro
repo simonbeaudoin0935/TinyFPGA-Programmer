@@ -8,7 +8,7 @@ QT       += core gui serialport
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = tinyFPGA_Programmer
+TARGET = TinyFPGA-Programmer
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use

@@ -18,19 +18,25 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_connectUart_Button_clicked();
+
+    void on_button_open_serial_port_clicked();
+
+    void on_pushButton_load_bin_file_clicked();
+
+    void on_button_test_spi_connection_clicked();
 
 
 
 
-
-    void on_test_connection_button_clicked();
 
     void on_flash_button_clicked();
 
     void on_read_flash_button_clicked();
 
-    void on_load_filebutton_clicked();
+
+
+
+
 
 private:
     Ui::MainWindow *ui;
