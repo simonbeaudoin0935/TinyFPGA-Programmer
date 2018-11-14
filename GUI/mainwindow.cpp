@@ -127,6 +127,7 @@ void MainWindow::on_pushButton_load_bin_file_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,"yo","C:\\Users\\simon\\Desktop\\icecube2_template\\template_Implmnt\\sbt\\outputs\\bitmap","*.bin");
     ui->lineEdit_bin_file_name->setText(filename);
+    if(filename != "")ui->flash_button->setEnabled(true);
 }
 
 void MainWindow::on_flash_button_clicked()
