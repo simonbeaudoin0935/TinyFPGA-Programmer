@@ -83,6 +83,10 @@ void MainWindow::on_button_test_spi_connection_clicked()
             QMessageBox::critical(this,
                                   "ERROR",
                                   "Programmer timeout");
+            output_string = "Never received ID from arduino, try reseting it";
+            ui->output->append(output_string);
+            ui->button_test_spi_connection->setEnabled(true);
+            ui->button_test_spi_connection->setText("retry");
             return;
         }
 
@@ -118,6 +122,7 @@ void MainWindow::on_button_test_spi_connection_clicked()
         ui->button_test_spi_connection->setText("Good Connection");
         ui->lineEdit_bin_file_name->setEnabled(true);
         ui->pushButton_load_bin_file->setEnabled(true);
+        ui->flash_button->setEnabled(true);
     }
 }
 
@@ -127,7 +132,7 @@ void MainWindow::on_pushButton_load_bin_file_clicked()
 {
     QString filename = QFileDialog::getOpenFileName(this,"yo","C:\\Users\\simon\\Desktop\\icecube2_template\\template_Implmnt\\sbt\\outputs\\bitmap","*.bin");
     ui->lineEdit_bin_file_name->setText(filename);
-    if(filename != "")ui->flash_button->setEnabled(true);
+
 }
 
 void MainWindow::on_flash_button_clicked()
@@ -138,7 +143,8 @@ void MainWindow::on_flash_button_clicked()
     qint64 bitstream_size;
     qint64 count = 0;
 
-
+    ui->flash_button->setText("FLASHING IN PROGRESS");
+    ui->flash_button->setEnabled(false);
     opcode.append('d');
     m_uart->write(opcode);
 

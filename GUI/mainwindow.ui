@@ -103,7 +103,7 @@
            <bool>false</bool>
           </property>
           <property name="text">
-           <string>C:\Users\simon\Documents\Git Repositories\Design4\SerialMux\template_Implmnt\sbt\outputs\bitmap</string>
+           <string>C:\Users\simon\Documents\Git Repositories\Design4\SerialMux\template_Implmnt\sbt\outputs\bitmap\sonar_scheduler_bitmap.bin</string>
           </property>
          </widget>
         </item>
